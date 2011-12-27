@@ -30,7 +30,7 @@ int main(void)
   NVIC->ISER[0] |= (1 << (TIM2_IRQn & 0x1F)); // enable position 28 interrupt (TIM2)
   TIM2->PSC = 0x0; // no prescaler
   TIM2->DIER |= TIM_DIER_UIE; // compare 1 interrupt enable
-  TIM2->ARR = 0x50; // count to 50
+  TIM2->ARR = 0x30; // count to 50
   TIM2->CR1 |= TIM_CR1_ARPE | TIM_CR1_CEN; // enable the clock
   TIM2->EGR = 1;	
   
