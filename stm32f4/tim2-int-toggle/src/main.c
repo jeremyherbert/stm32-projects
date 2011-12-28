@@ -15,7 +15,7 @@ int main(void)
 
   GPIOC->MODER = 0x55555555; // all outputs
   GPIOC->OTYPER = 0x0; // all push-pull
-  
+  GPIOC->OSPEEDR = 0xFFFFFFFF; // 100 mhz output
   GPIOC->ODR = 0xFFFFFFFF; // set all pins to high 
 
   NVIC->ISER[0] |= (1<< (TIM2_IRQn & 0x1F)); // enable the tim2 irq
