@@ -1,6 +1,6 @@
 # put your *.o targets here, make should handle the rest!
 
-OBJS = main.o #stm32f10x_it.o
+OBJS = uart.o main.o #stm32f10x_it.o
 
 # all the files will be generated with this name (main.elf, main.bin, main.hex, etc)
 
@@ -28,7 +28,7 @@ export LIB_ROOT=$(ROOT)/lib
 
 vpath %.c $(ROOT)/src  
 
-CFLAGS += -I$(ROOT)/inc -I$(LIB_ROOT) -I$(LIB_ROOT)/inc 
+CFLAGS += -I$(ROOT)/inc -I$(LIB_ROOT) -I$(LIB_ROOT)/inc -I$(ROOT)/src 
 CFLAGS += -I$(LIB_ROOT)/inc/core -I$(LIB_ROOT)/inc/peripherals 
 
 OBJS += $(LIB_ROOT)/startup_stm32f10x_md_vl.s # add startup file to build
